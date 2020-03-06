@@ -12,5 +12,9 @@ const router = express.Router(options);
 router.get('/add-product', productController.getProduct);
 
 router.post('/add-product', productController.postProduct);
+// router.get('/viewDetalPage', productController.getProductById);
+
+
+
 
 module.exports = router;

@@ -14,15 +14,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //app.use('/mycss', express.static(path.join(__dirname, 'public', 'css')));
-app.use('/img', express.static(path.join(__dirname, 'public', 'images')));
+app.use('/img', express.static(path.join(__dirname, 'public', 'images')));;
 app.use('/js', express.static(path.join(__dirname, 'public', 'js')));
 
 
 app.use('/admin', adminRoutes);
+
 app.use(shopRoutes);
 
 app.use('/', (req, res, next) => {
     console.log('This always run');
+    res.send('it is me ')
     next();
 });
 
